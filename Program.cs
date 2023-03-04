@@ -56,7 +56,7 @@ void PrintArray(int[,] array)
     }
 }
 
-int CheckArray(int[,] array)
+void CheckArray(int[,] array)
 {
     Console.WriteLine("Введите число: ");
     int num = Convert.ToInt32(Console.ReadLine());
@@ -70,12 +70,13 @@ int CheckArray(int[,] array)
                 find = true;
                 break;
             }
+            if (find)
+                Console.WriteLine($"Элемент находится на позиции {i}, {j}");
+            else
+                Console.WriteLine("Такого элемента в массиве нет");
         }
     }
-    if (find)
-        Console.WriteLine($"Элемент находится на позиции {i}, {j}");
-    else
-        Console.WriteLine("Такого элемента в массиве нет");
+
 }
 
 
