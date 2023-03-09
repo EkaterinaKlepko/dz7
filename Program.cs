@@ -60,17 +60,11 @@
 // {
 //     Console.WriteLine("Введите число: ");
 //     int num = Convert.ToInt32(Console.ReadLine());
-//     bool find = false;
 //     for (int i = 0; i < array.GetLength(0); i++)
 //     {
 //         for (int j = 0; j < array.GetLength(1); j++)
 //         {
 //             if (num == array[i, j])
-//             {
-//                 find = true;
-//                 break;
-//             }
-//             if (find)
 //                 Console.WriteLine($"Элемент находится на позиции {i}, {j}");
 //             else
 //                 Console.WriteLine("Такого элемента в массиве нет");
@@ -97,44 +91,44 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-void FillArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-        for (int j = 0; j < array.GetLength(1); j++)
-            array[i, j] = new Random().Next(0, 10);
-}
+// void FillArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//         for (int j = 0; j < array.GetLength(1); j++)
+//             array[i, j] = new Random().Next(0, 10);
+// }
 
-void PrintArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-            Console.Write($"{array[i, j],3} \t");
-        Console.WriteLine();
-    }
-}
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//             Console.Write($"{array[i, j],3} \t");
+//         Console.WriteLine();
+//     }
+// }
 
-void Average (int[,] array)
-{
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-        double avrg = 0;
-        for (int i = 0; i < array.GetLength(0); i++)
-        {   
-            avrg = avrg + array[i, j];
-            avrg = avrg / (i+1);
-            Console.Write(avrg + "; ");
-        }
-        
-    }
-    
-}
+// void Average(int[,] array)
+// {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         double avrg = 0;
+//         for (int i = 0; i < array.GetLength(0); i++)
+//         {
+//             avrg = avrg + array[i, j];
+//         }
+//             avrg = avrg / (array.GetLength(0));
+//             Console.Write($"{avrg} ; ");
 
-Console.WriteLine("Введите количество строк");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов");
-int cols = Convert.ToInt32(Console.ReadLine());
-int[,] array = new int[rows, cols];
-FillArray(array);
-PrintArray(array);
-Average (array);
+//     }
+
+// }
+
+// Console.WriteLine("Введите количество строк");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов");
+// int cols = Convert.ToInt32(Console.ReadLine());
+// int[,] array = new int[rows, cols];
+// FillArray(array);
+// PrintArray(array);
+// Average(array);
